@@ -1,0 +1,14 @@
+{
+  "name": "test_image10",
+  "sourceImage": "/Users/babayaga/.cache/kagglehub/datasets/ezzzio/random-images/versions/1/dataset/test/image10.jpg",
+  "ssim": 0.8125,
+  "psnr": 19.15,
+  "finalLoss": 0.15227,
+  "layers": 16,
+  "convergedSteps": 150,
+  "elapsedSeconds": 36.41,
+  "renderPath": "test_comparisons/test_image10_rendered.png",
+  "comparisonPath": "test_comparisons/test_image10_comparison.png",
+  "latexPath": "test_comparisons/test_image10_equations.tex",
+  "pdfPath": "test_comparisons/test_image10_equations.pdf"
+}

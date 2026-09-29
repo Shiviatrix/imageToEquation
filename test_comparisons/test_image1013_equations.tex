@@ -1,0 +1,256 @@
+\documentclass[10pt]{article}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage[margin=0.6in,landscape]{geometry}
+\usepackage{microtype}
+\usepackage{enumitem}
+\allowdisplaybreaks
+
+\setlength{\parindent}{0pt}
+\setlength{\jot}{4pt}
+
+\begin{document}
+
+\section*{Artwork: Test Image1013}
+
+\subsection*{Scale-Invariant Coordinate System}
+\[
+  \tilde{X} = 2\left(\frac{x}{W}\right) - 1, \quad \tilde{Y} = 1 - 2\left(\frac{y}{H}\right) \\[6pt]
+  X = \frac{\left(\tilde{X} - \frac{5}{67}\right)}{\frac{83}{84}}, \quad Y = \frac{\left(\tilde{Y} + \frac{13}{176}\right)}{\frac{201}{182}}, \quad \theta = \arctan\left(\frac{Y}{X}\right)
+\]
+
+\subsection*{Layer Definitions & Boundary Manifolds}
+% Layer 0: Background
+\begin{align*}
+  C_0(X,Y,v) &= \frac{20-3v}{40} \cdot \left(1 + \frac{5}{133}X + \frac{7}{65}Y\right)
+\end{align*}
+
+% Layer 1: Primitive_1
+\begin{align*}
+  X_{1} &= \left(X - \frac{35}{159}\right), \quad Y_{1} = \left(Y - \frac{99}{193}\right) \\
+  \tau_{1}(X,Y) &= -\frac{7}{187}\cos^{2}\left(\frac{351}{22}X_{1} + \frac{365}{69}Y_{1} - \frac{74}{141}\cos\left(\frac{581}{129}X_{1} + \frac{370}{191}Y_{1}\right)\right)
+    &\quad + \frac{5}{76}\cos^{4}\left(\frac{1077}{200}X_{1} + \frac{2150}{107}Y_{1} + \frac{93}{158}\cos\left(\frac{55}{31}X_{1} + \frac{916}{169}Y_{1}\right)\right) + \frac{1}{28}\cos^{6}\left(\frac{1087}{39}X_{1} + \frac{1891}{150}Y_{1} + \frac{97}{151}\cos\left(\frac{1031}{179}X_{1} + \frac{467}{151}Y_{1}\right)\right)
+    &\quad + \frac{1}{120}\cos^{8}\left(\frac{2138}{179}X_{1} + \frac{291}{8}Y_{1}\right) + \frac{5}{137}\cos^{12}\left(\frac{5153}{107}X_{1} + \frac{3566}{179}Y_{1} + \frac{15}{176}\cos\left(\frac{89}{11}X_{1} + \frac{354}{85}Y_{1}\right)\right)
+    &\quad + \frac{2}{159}\cos^{16}\left(\frac{2089}{103}X_{1} + \frac{7957}{143}Y_{1} + \frac{53}{190}\cos\left(\frac{104}{23}X_{1} + \frac{1147}{150}Y_{1}\right)\right)
+  C_{1}(X,Y,v) &= \frac{9-2v}{40} \cdot \left(1 - \frac{13}{199}X_{1} + \frac{16}{149}Y_{1}\right) + \tau_{1}(X,Y)
+  \Phi_{1}(X,Y) &= 1 - \left(\frac{X_{1}}{\frac{33}{38}}\right)^{2} - \left(\frac{Y_{1}}{\frac{36}{89}}\right)^{2}
+    &\quad - \frac{1}{47}\cos\left(1\theta - \frac{1}{9}\right) + \frac{4}{29}\cos\left(2\theta + \frac{73}{85}\right) + \frac{13}{192}\cos\left(3\theta + \frac{138}{119}\right) + \frac{9}{182}\cos\left(4\theta + \frac{285}{182}\right)
+    &\quad + \frac{20}{157}\cos\left(5\theta + 1.996\right) - \frac{30}{167}\cos\left(6\theta + \frac{535}{187}\right) + \frac{1}{44}\cos\left(7\theta + \frac{567}{199}\right) - \frac{3}{110}\cos\left(8\theta + \frac{513}{160}\right)
+  W_{1}(X,Y) &= \exp\left(-\exp\left(-\frac{6554}{151}\cdot\Phi_{1}(X,Y)\right)\right)
+\end{align*}
+
+% Layer 2: Primitive_2
+\begin{align*}
+  X_{2} &= \left(X + \frac{33}{157}\right), \quad Y_{2} = \left(Y + \frac{141}{194}\right) \\
+  \tau_{2}(X,Y) &= \frac{18}{77}\cos^{2}\left(\frac{1159}{71}X_{2} + \frac{13}{2}Y_{2} + \frac{166}{171}\cos\left(\frac{421}{184}X_{2} + \frac{159}{61}Y_{2}\right)\right)
+    &\quad + \frac{13}{58}\cos^{4}\left(\frac{1292}{197}X_{2} + \frac{1447}{76}Y_{2} + \frac{45}{172}\cos\left(\frac{334}{119}X_{2} + \frac{802}{137}Y_{2}\right)\right) + \frac{33}{128}\cos^{6}\left(\frac{4477}{155}X_{2} + \frac{2498}{195}Y_{2} + \frac{20}{21}\cos\left(\frac{897}{178}X_{2} + \frac{223}{47}Y_{2}\right)\right)
+    &\quad - \frac{37}{188}\cos^{8}\left(\frac{967}{81}X_{2} + \frac{1243}{36}Y_{2} + \frac{47}{53}\cos\left(\frac{248}{59}X_{2} + \frac{1695}{179}Y_{2}\right)\right) - \frac{43}{194}\cos^{12}\left(\frac{9092}{189}X_{2} + \frac{1963}{102}Y_{2} + \frac{40}{117}\cos\left(\frac{532}{73}X_{2} + \frac{720}{137}Y_{2}\right)\right)
+    &\quad - \frac{5}{44}\cos^{16}\left(\frac{2642}{137}X_{2} + \frac{11051}{198}Y_{2} + \frac{9}{169}\cos\left(\frac{781}{175}X_{2} + \frac{1033}{135}Y_{2}\right)\right)
+  C_{2}(X,Y,v) &= \frac{27-2v-v^2}{40} \cdot \left(1 - \frac{83}{143}X_{2} - \frac{12}{25}Y_{2}\right) + \tau_{2}(X,Y)
+  \Phi_{2}(X,Y) &= 1 - \left(\frac{X_{2}}{\frac{37}{93}}\right)^{2} - \left(\frac{Y_{2}}{\frac{149}{190}}\right)^{2}
+    &\quad + \frac{19}{146}\cos\left(1\theta + \frac{25}{99}\right) - \frac{1}{65}\cos\left(2\theta + \frac{99}{172}\right) - \frac{4}{59}\cos\left(3\theta + \frac{239}{199}\right) - \frac{11}{180}\cos\left(4\theta + \frac{277}{198}\right)
+    &\quad + \frac{1}{126}\cos\left(5\theta + \frac{41}{21}\right) + \frac{20}{181}\cos\left(6\theta + \frac{411}{160}\right) - \frac{2}{33}\cos\left(7\theta + \frac{615}{199}\right) + \frac{11}{153}\cos\left(8\theta + \frac{366}{109}\right)
+  W_{2}(X,Y) &= \exp\left(-\exp\left(-\frac{3775}{87}\cdot\Phi_{2}(X,Y)\right)\right)
+\end{align*}
+
+% Layer 3: Primitive_3
+\begin{align*}
+  X_{3} &= \left(X + \frac{155}{179}\right), \quad Y_{3} = \left(Y - \frac{29}{178}\right) \\
+  \tau_{3}(X,Y) &= \frac{15}{184}\cos^{2}\left(\frac{1769}{111}X_{3} + \frac{371}{66}Y_{3} + \frac{52}{103}\cos\left(\frac{85}{21}X_{3} + \frac{246}{121}Y_{3}\right)\right)
+    &\quad - \frac{2}{173}\cos^{4}\left(\frac{623}{100}X_{3} + \frac{4036}{197}Y_{3} - \frac{10}{19}\cos\left(\frac{169}{68}X_{3} + \frac{767}{158}Y_{3}\right)\right) - \frac{1}{40}\cos^{6}\left(\frac{5305}{188}X_{3} + \frac{1839}{155}Y_{3} - \frac{59}{185}\cos\left(\frac{690}{113}X_{3} + \frac{443}{132}Y_{3}\right)\right)
+    &\quad - \frac{2}{173}\cos^{8}\left(\frac{673}{57}X_{3} + \frac{4885}{137}Y_{3} + \frac{49}{191}\cos\left(\frac{483}{157}X_{3} + \frac{623}{90}Y_{3}\right)\right) + \frac{13}{121}\cos^{12}\left(\frac{6617}{138}X_{3} + \frac{3126}{157}Y_{3} - \frac{22}{151}\cos\left(\frac{1558}{189}X_{3} + \frac{739}{199}Y_{3}\right)\right)
+    &\quad + \frac{1}{64}\cos^{16}\left(\frac{3845}{191}X_{3} + \frac{731}{13}Y_{3} - \frac{60}{161}\cos\left(\frac{669}{155}X_{3} + \frac{1583}{196}Y_{3}\right)\right)
+  C_{3}(X,Y,v) &= \frac{27-2v}{40} \cdot \left(1 + \frac{61}{75}X_{3} + \frac{15}{67}Y_{3}\right) + \tau_{3}(X,Y)
+  \Phi_{3}(X,Y) &= 1 - \left(\frac{X_{3}}{\frac{39}{64}}\right)^{2} - \left(\frac{Y_{3}}{\frac{37}{108}}\right)^{2}
+    &\quad + \frac{22}{131}\cos\left(1\theta - \frac{23}{102}\right) + \frac{26}{73}\cos\left(2\theta + \frac{61}{189}\right) + \frac{43}{191}\cos\left(3\theta + \frac{23}{35}\right) + \frac{1}{98}\cos\left(4\theta + \frac{73}{43}\right)
+    &\quad + \frac{2}{119}\cos\left(6\theta + \frac{197}{74}\right) + \frac{25}{84}\cos\left(7\theta + \frac{730}{199}\right) + \frac{22}{141}\cos\left(8\theta + \frac{53}{14}\right)
+  W_{3}(X,Y) &= \exp\left(-\exp\left(-\frac{4927}{111}\cdot\Phi_{3}(X,Y)\right)\right)
+\end{align*}
+
+% Layer 4: Primitive_4
+\begin{align*}
+  X_{4} &= \left(X - \frac{61}{178}\right), \quad Y_{4} = \left(Y - \frac{56}{87}\right) \\
+  \tau_{4}(X,Y) &= \frac{19}{176}\cos^{2}\left(\frac{443}{28}X_{4} + \frac{169}{28}Y_{4} + \frac{9}{167}\cos\left(\frac{190}{51}X_{4} + \frac{366}{169}Y_{4}\right)\right)
+    &\quad - \frac{9}{74}\cos^{4}\left(\frac{1052}{185}X_{4} + \frac{3739}{185}Y_{4} - \frac{32}{97}\cos\left(\frac{144}{83}X_{4} + \frac{958}{189}Y_{4}\right)\right) - \frac{30}{197}\cos^{6}\left(\frac{3528}{127}X_{4} + \frac{2249}{186}Y_{4} + \frac{23}{87}\cos\left(\frac{647}{113}X_{4} + \frac{583}{175}Y_{4}\right)\right)
+    &\quad - \frac{1}{129}\cos^{8}\left(\frac{1049}{87}X_{4} + \frac{5778}{161}Y_{4} + \frac{19}{159}\cos\left(\frac{607}{195}X_{4} + \frac{1141}{165}Y_{4}\right)\right) - \frac{9}{167}\cos^{12}\left(\frac{1547}{32}X_{4} + \frac{727}{36}Y_{4} + \frac{1}{11}\cos\left(\frac{1349}{163}X_{4} + \frac{229}{56}Y_{4}\right)\right)
+    &\quad - \frac{29}{183}\cos^{16}\left(\frac{3362}{165}X_{4} + \frac{7155}{128}Y_{4} - \frac{14}{73}\cos\left(\frac{440}{103}X_{4} + \frac{22}{3}Y_{4}\right)\right)
+  C_{4}(X,Y,v) &= \frac{10-v}{40} \cdot \left(1 + \frac{17}{65}X_{4} + \frac{33}{142}Y_{4}\right) + \tau_{4}(X,Y)
+  \Phi_{4}(X,Y) &= 1 - \left(\frac{X_{4}}{\frac{72}{137}}\right)^{2} - \left(\frac{Y_{4}}{\frac{143}{181}}\right)^{2}
+    &\quad + \frac{41}{198}\cos\left(1\theta - \frac{31}{92}\right) - \frac{14}{99}\cos\left(2\theta + \frac{3}{4}\right) + \frac{51}{167}\cos\left(3\theta + \frac{199}{172}\right) + \frac{37}{131}\cos\left(4\theta + \frac{118}{95}\right)
+    &\quad - \frac{27}{187}\cos\left(5\theta + \frac{169}{93}\right) - \frac{23}{178}\cos\left(6\theta + \frac{392}{169}\right) + \frac{10}{41}\cos\left(7\theta + \frac{407}{130}\right) - \frac{7}{65}\cos\left(8\theta + \frac{577}{164}\right)
+  W_{4}(X,Y) &= \exp\left(-\exp\left(-\frac{3948}{89}\cdot\Phi_{4}(X,Y)\right)\right)
+\end{align*}
+
+% Layer 5: Primitive_5
+\begin{align*}
+  X_{5} &= \left(X + \frac{85}{139}\right), \quad Y_{5} = \left(Y - \frac{140}{199}\right) \\
+  \tau_{5}(X,Y) &= \frac{3}{136}\cos^{4}\left(\frac{985}{169}X_{5} + \frac{471}{23}Y_{5} + \frac{39}{115}\cos\left(\frac{407}{170}X_{5} + \frac{851}{149}Y_{5}\right)\right)
+    &\quad + \frac{2}{139}\cos^{8}\left(\frac{1569}{134}X_{5} + \frac{2279}{64}Y_{5} - \frac{2}{7}\cos\left(\frac{310}{103}X_{5} + \frac{1313}{189}Y_{5}\right)\right) - \frac{1}{79}\cos^{16}\left(\frac{2461}{124}X_{5} + \frac{7363}{131}Y_{5} - \frac{29}{141}\cos\left(\frac{764}{197}X_{5} + \frac{1601}{200}Y_{5}\right)\right)
+  C_{5}(X,Y,v) &= \frac{17-2v+v^2}{40} \cdot \left(1 - \frac{3}{22}X_{5} - \frac{13}{61}Y_{5}\right) + \tau_{5}(X,Y)
+  \Phi_{5}(X,Y) &= 1 - \left(\frac{X_{5}}{\frac{119}{183}}\right)^{2} - \left(\frac{Y_{5}}{\frac{126}{145}}\right)^{2}
+    &\quad - \frac{23}{198}\cos\left(1\theta - \frac{42}{169}\right) - \frac{53}{198}\cos\left(2\theta + \frac{62}{85}\right) + \frac{3}{46}\cos\left(3\theta + \frac{149}{158}\right) + \frac{10}{89}\cos\left(4\theta + \frac{53}{33}\right)
+    &\quad - \frac{7}{97}\cos\left(5\theta + 1.998\right) - \frac{5}{23}\cos\left(6\theta + \frac{333}{137}\right) - \frac{43}{178}\cos\left(7\theta + \frac{573}{175}\right) - \frac{11}{190}\cos\left(8\theta + \frac{613}{171}\right)
+  W_{5}(X,Y) &= \exp\left(-\exp\left(-\frac{1397}{32}\cdot\Phi_{5}(X,Y)\right)\right)
+\end{align*}
+
+% Layer 6: Primitive_6
+\begin{align*}
+  X_{6} &= \left(X - \frac{143}{194}\right), \quad Y_{6} = \left(Y - \frac{82}{179}\right) \\
+  \tau_{6}(X,Y) &= -\frac{2}{161}\cos^{2}\left(\frac{3076}{197}X_{6} + \frac{1051}{165}Y_{6} - \frac{4}{37}\cos\left(\frac{107}{25}X_{6} + \frac{57}{35}Y_{6}\right)\right)
+    &\quad - \frac{2}{191}\cos^{4}\left(\frac{343}{60}X_{6} + \frac{3975}{197}Y_{6} + \frac{13}{188}\cos\left(\frac{484}{185}X_{6} + \frac{523}{97}Y_{6}\right)\right) - \frac{1}{73}\cos^{6}\left(\frac{5021}{177}X_{6} + \frac{1559}{132}Y_{6} - \frac{13}{192}\cos\left(\frac{391}{75}X_{6} + \frac{535}{173}Y_{6}\right)\right)
+    &\quad + \frac{1}{156}\cos^{12}\left(\frac{5963}{125}X_{6} + \frac{2811}{140}Y_{6} + \frac{33}{184}\cos\left(\frac{1077}{145}X_{6} + \frac{301}{57}Y_{6}\right)\right) - \frac{2}{149}\cos^{16}\left(\frac{3439}{175}X_{6} + \frac{7679}{137}Y_{6} + \frac{45}{154}\cos\left(\frac{247}{61}X_{6} + \frac{1495}{192}Y_{6}\right)\right)
+  C_{6}(X,Y,v) &= \frac{15-2v}{40} \cdot \left(1 - \frac{44}{189}X_{6} - \frac{67}{200}Y_{6}\right) + \tau_{6}(X,Y)
+  \Phi_{6}(X,Y) &= 1 - \left(\frac{X_{6}}{\frac{125}{174}}\right)^{2} - \left(\frac{Y_{6}}{\frac{89}{83}}\right)^{2}
+    &\quad - \frac{5}{91}\cos\left(1\theta - \frac{86}{155}\right) + \frac{12}{109}\cos\left(2\theta + \frac{143}{172}\right) - \frac{12}{107}\cos\left(3\theta + \frac{98}{73}\right) - \frac{14}{173}\cos\left(4\theta + \frac{175}{106}\right)
+    &\quad + \frac{1}{4}\cos\left(5\theta + \frac{67}{37}\right) - \frac{20}{173}\cos\left(6\theta + \frac{375}{152}\right) + \frac{11}{159}\cos\left(7\theta + \frac{277}{88}\right) - \frac{37}{180}\cos\left(8\theta + \frac{599}{176}\right)
+  W_{6}(X,Y) &= \exp\left(-\exp\left(-\frac{2419}{54}\cdot\Phi_{6}(X,Y)\right)\right)
+\end{align*}
+
+% Layer 7: Primitive_7
+\begin{align*}
+  X_{7} &= \left(X + \frac{23}{127}\right), \quad Y_{7} = \left(Y + \frac{65}{188}\right) \\
+  \tau_{7}(X,Y) &= -\frac{1}{100}\cos^{2}\left(\frac{1223}{87}X_{7} + \frac{705}{97}Y_{7} + \frac{154}{141}\cos\left(\frac{83}{14}X_{7} + \frac{195}{199}Y_{7}\right)\right)
+    &\quad + \frac{1}{107}\cos^{4}\left(\frac{1213}{177}X_{7} + \frac{1595}{82}Y_{7} - \frac{169}{152}\cos\left(\frac{11}{46}X_{7} + \frac{1198}{177}Y_{7}\right)\right) + \frac{1}{91}\cos^{8}\left(\frac{1814}{149}X_{7} + \frac{4449}{124}Y_{7} - \frac{2}{17}\cos\left(\frac{370}{193}X_{7} + \frac{676}{105}Y_{7}\right)\right)
+    &\quad - \frac{1}{105}\cos^{12}\left(\frac{5478}{115}X_{7} + \frac{3243}{164}Y_{7} + \frac{41}{104}\cos\left(\frac{749}{96}X_{7} + \frac{318}{79}Y_{7}\right)\right) - \frac{1}{197}\cos^{16}\left(\frac{3309}{163}X_{7} + \frac{10927}{195}Y_{7}\right)
+  C_{7}(X,Y,v) &= \frac{37-2v-3v^2}{40} \cdot \left(1 + \frac{7}{134}X_{7} - \frac{15}{182}Y_{7}\right) + \tau_{7}(X,Y)
+  \Phi_{7}(X,Y) &= 1 - \left(\frac{X_{7}}{\frac{8}{25}}\right)^{2} - \left(\frac{Y_{7}}{\frac{55}{84}}\right)^{2}
+    &\quad + \frac{11}{112}\cos\left(1\theta + \frac{22}{111}\right) - \frac{13}{98}\cos\left(2\theta + \frac{27}{137}\right) + \frac{17}{132}\cos\left(3\theta + \frac{45}{59}\right) + \frac{1}{167}\cos\left(4\theta + \frac{179}{197}\right)
+    &\quad - \frac{18}{103}\cos\left(5\theta + \frac{235}{104}\right) - \frac{7}{103}\cos\left(6\theta + \frac{423}{151}\right) + \frac{19}{167}\cos\left(7\theta + \frac{713}{191}\right) + \frac{1}{8}\cos\left(8\theta + \frac{612}{173}\right)
+  W_{7}(X,Y) &= \exp\left(-\exp\left(-\frac{7902}{185}\cdot\Phi_{7}(X,Y)\right)\right)
+\end{align*}
+
+% Layer 8: Primitive_8
+\begin{align*}
+  X_{8} &= \left(X - \frac{99}{199}\right), \quad Y_{8} = \left(Y + \frac{67}{140}\right) \\
+  \tau_{8}(X,Y) &= \frac{47}{185}\cos^{2}\left(\frac{1933}{122}X_{8} + \frac{1041}{178}Y_{8} - \frac{16}{105}\cos\left(\frac{687}{166}X_{8} + \frac{421}{195}Y_{8}\right)\right)
+    &\quad + \frac{14}{65}\cos^{4}\left(\frac{764}{131}X_{8} + \frac{3531}{178}Y_{8} + \frac{21}{130}\cos\left(\frac{329}{176}X_{8} + \frac{907}{187}Y_{8}\right)\right) - \frac{7}{71}\cos^{6}\left(\frac{2868}{103}X_{8} + \frac{939}{77}Y_{8} + \frac{2}{13}\cos\left(\frac{967}{164}X_{8} + \frac{169}{58}Y_{8}\right)\right)
+    &\quad - \frac{5}{123}\cos^{8}\left(\frac{1459}{120}X_{8} + \frac{6978}{193}Y_{8} - \frac{30}{199}\cos\left(\frac{431}{146}X_{8} + \frac{1021}{149}Y_{8}\right)\right) + \frac{6}{59}\cos^{12}\left(\frac{7031}{146}X_{8} + \frac{2640}{131}Y_{8} - \frac{3}{20}\cos\left(\frac{637}{81}X_{8} + \frac{656}{171}Y_{8}\right)\right)
+    &\quad - \frac{7}{81}\cos^{16}\left(\frac{1917}{95}X_{8} + \frac{7918}{141}Y_{8} - \frac{7}{46}\cos\left(\frac{763}{187}X_{8} + \frac{203}{25}Y_{8}\right)\right)
+  C_{8}(X,Y,v) &= \frac{25-2v+v^2}{40} \cdot \left(1 - \frac{8}{39}X_{8} + \frac{50}{199}Y_{8}\right) + \tau_{8}(X,Y)
+  \Phi_{8}(X,Y) &= 1 - \left(\frac{X_{8}}{\frac{39}{194}}\right)^{2} - \left(\frac{Y_{8}}{\frac{55}{177}}\right)^{2}
+    &\quad - \frac{6}{127}\cos\left(1\theta + \frac{19}{194}\right) + \frac{17}{70}\cos\left(2\theta + \frac{79}{178}\right) - \frac{50}{193}\cos\left(3\theta + \frac{181}{143}\right) - \frac{44}{197}\cos\left(4\theta + \frac{190}{119}\right)
+    &\quad - \frac{3}{14}\cos\left(5\theta + \frac{72}{37}\right) - \frac{9}{64}\cos\left(6\theta + \frac{228}{101}\right) - \frac{5}{196}\cos\left(7\theta + \frac{521}{169}\right) - \frac{16}{195}\cos\left(8\theta + \frac{244}{75}\right)
+  W_{8}(X,Y) &= \exp\left(-\exp\left(-\frac{6395}{143}\cdot\Phi_{8}(X,Y)\right)\right)
+\end{align*}
+
+% Layer 9: Primitive_9
+\begin{align*}
+  X_{9} &= \left(X - \frac{28}{167}\right), \quad Y_{9} = \left(Y - \frac{3}{10}\right) \\
+  \tau_{9}(X,Y) &= -\frac{7}{130}\cos^{2}\left(\frac{2282}{129}X_{9} + \frac{773}{158}Y_{9} + \frac{41}{44}\cos\left(\frac{270}{133}X_{9} + \frac{318}{85}Y_{9}\right)\right)
+    &\quad - \frac{1}{94}\cos^{4}\left(\frac{949}{177}X_{9} + \frac{3590}{169}Y_{9} - \frac{14}{23}\cos\left(\frac{99}{139}X_{9} + \frac{1201}{200}Y_{9}\right)\right) - \frac{3}{155}\cos^{8}\left(\frac{2454}{199}X_{9} + \frac{6179}{173}Y_{9} + \frac{67}{142}\cos\left(\frac{438}{161}X_{9} + \frac{385}{52}Y_{9}\right)\right)
+    &\quad - \frac{2}{83}\cos^{12}\left(\frac{5744}{119}X_{9} + \frac{3335}{168}Y_{9} - \frac{151}{165}\cos\left(\frac{1824}{199}X_{9} + \frac{497}{108}Y_{9}\right)\right) - \frac{2}{81}\cos^{16}\left(\frac{59}{3}X_{9} + \frac{11185}{198}Y_{9} - \frac{6}{67}\cos\left(\frac{527}{180}X_{9} + \frac{1261}{164}Y_{9}\right)\right)
+  C_{9}(X,Y,v) &= \frac{11-3v}{40} \cdot \left(1 - \frac{1}{8}X_{9} - \frac{5}{176}Y_{9}\right) + \tau_{9}(X,Y)
+  \Phi_{9}(X,Y) &= 1 - \left(\frac{X_{9}}{\frac{43}{138}}\right)^{2} - \left(\frac{Y_{9}}{\frac{32}{63}}\right)^{2}
+    &\quad + \frac{13}{102}\cos\left(1\theta - \frac{1}{25}\right) - \frac{30}{167}\cos\left(2\theta + \frac{49}{156}\right) + \frac{2}{87}\cos\left(4\theta + \frac{119}{61}\right) - \frac{13}{187}\cos\left(5\theta + \frac{161}{75}\right)
+    &\quad + \frac{17}{115}\cos\left(6\theta + \frac{321}{154}\right) - \frac{1}{187}\cos\left(7\theta + \frac{533}{167}\right) - \frac{3}{151}\cos\left(8\theta + \frac{183}{56}\right)
+  W_{9}(X,Y) &= \exp\left(-\exp\left(-\frac{8117}{188}\cdot\Phi_{9}(X,Y)\right)\right)
+\end{align*}
+
+% Layer 10: Primitive_10
+\begin{align*}
+  X_{10} &= \left(X - \frac{22}{43}\right), \quad Y_{10} = \left(Y + \frac{41}{86}\right) \\
+  \tau_{10}(X,Y) &= -\frac{5}{186}\cos^{2}\left(\frac{1498}{95}X_{10} + \frac{1239}{200}Y_{10} + \frac{8}{37}\cos\left(\frac{589}{141}X_{10} + \frac{332}{179}Y_{10}\right)\right)
+    &\quad + \frac{3}{73}\cos^{4}\left(\frac{710}{121}X_{10} + \frac{2605}{129}Y_{10} + \frac{21}{199}\cos\left(\frac{47}{22}X_{10} + \frac{140}{27}Y_{10}\right)\right) - \frac{22}{151}\cos^{6}\left(\frac{3324}{119}X_{10} + \frac{1667}{140}Y_{10}\right)
+    &\quad - \frac{23}{98}\cos^{8}\left(\frac{1853}{155}X_{10} + \frac{7033}{197}Y_{10} + \frac{33}{137}\cos\left(\frac{14}{5}X_{10} + \frac{1317}{182}Y_{10}\right)\right) + \frac{1}{118}\cos^{12}\left(\frac{7259}{151}X_{10} + \frac{853}{43}Y_{10}\right)
+    &\quad - \frac{1}{28}\cos^{16}\left(\frac{971}{48}X_{10} + \frac{10318}{185}Y_{10} - \frac{5}{47}\cos\left(\frac{637}{152}X_{10} + \frac{1509}{185}Y_{10}\right)\right)
+  C_{10}(X,Y,v) &= \frac{25+3v+7v^2}{40} \cdot \left(1 + \frac{21}{172}X_{10} + \frac{69}{190}Y_{10}\right) + \tau_{10}(X,Y)
+  \Phi_{10}(X,Y) &= 1 - \left(\frac{X_{10}}{\frac{37}{193}}\right)^{2} - \left(\frac{Y_{10}}{\frac{23}{89}}\right)^{2}
+    &\quad + \frac{15}{169}\cos\left(1\theta - \frac{22}{185}\right) - \frac{14}{163}\cos\left(2\theta + \frac{124}{189}\right) + \frac{19}{93}\cos\left(3\theta + \frac{117}{166}\right) - \frac{3}{145}\cos\left(4\theta + \frac{268}{181}\right)
+    &\quad - \frac{8}{123}\cos\left(5\theta + \frac{60}{29}\right) - \frac{7}{46}\cos\left(7\theta + \frac{409}{151}\right) + \frac{21}{160}\cos\left(8\theta + \frac{651}{194}\right)
+  W_{10}(X,Y) &= \exp\left(-\exp\left(-\frac{583}{13}\cdot\Phi_{10}(X,Y)\right)\right)
+\end{align*}
+
+% Layer 11: Primitive_11
+\begin{align*}
+  X_{11} &= \left(X - \frac{101}{177}\right), \quad Y_{11} = \left(Y + \frac{105}{197}\right) \\
+  \tau_{11}(X,Y) &= -\frac{33}{119}\cos^{2}\left(\frac{2966}{183}X_{11} + \frac{1053}{184}Y_{11} + \frac{41}{166}\cos\left(\frac{893}{196}X_{11} + \frac{317}{198}Y_{11}\right)\right)
+    &\quad - \frac{3}{173}\cos^{4}\left(\frac{548}{95}X_{11} + \frac{3830}{187}Y_{11} - \frac{52}{199}\cos\left(\frac{167}{74}X_{11} + \frac{266}{55}Y_{11}\right)\right) - \frac{22}{195}\cos^{6}\left(\frac{4309}{153}X_{11} + \frac{1462}{123}Y_{11} + \frac{29}{186}\cos\left(\frac{1201}{194}X_{11} + \frac{248}{83}Y_{11}\right)\right)
+    &\quad - \frac{2}{69}\cos^{8}\left(\frac{1225}{103}X_{11} + \frac{4009}{111}Y_{11} - \frac{13}{163}\cos\left(\frac{233}{86}X_{11} + \frac{1144}{159}Y_{11}\right)\right) - \frac{3}{179}\cos^{16}\left(\frac{2854}{145}X_{11} + \frac{6342}{113}Y_{11} - \frac{23}{130}\cos\left(\frac{116}{31}X_{11} + \frac{1396}{173}Y_{11}\right)\right)
+  C_{11}(X,Y,v) &= \frac{26-6v-v^2}{40} \cdot \left(1 - \frac{89}{193}X_{11} + \frac{49}{158}Y_{11}\right) + \tau_{11}(X,Y)
+  \Phi_{11}(X,Y) &= 1 - \left(\frac{X_{11}}{\frac{86}{185}}\right)^{2} - \left(\frac{Y_{11}}{\frac{11}{18}}\right)^{2}
+    &\quad + \frac{52}{145}\cos\left(1\theta + \frac{78}{175}\right) + \frac{36}{109}\cos\left(3\theta + \frac{132}{169}\right) + \frac{17}{88}\cos\left(4\theta + \frac{165}{82}\right) + \frac{10}{111}\cos\left(5\theta + \frac{128}{61}\right)
+    &\quad + \frac{60}{191}\cos\left(6\theta + \frac{394}{163}\right) + \frac{1}{45}\cos\left(7\theta + \frac{614}{189}\right) + \frac{1}{28}\cos\left(8\theta + \frac{347}{101}\right)
+  W_{11}(X,Y) &= \exp\left(-\exp\left(-\frac{6295}{141}\cdot\Phi_{11}(X,Y)\right)\right)
+\end{align*}
+
+% Layer 12: Primitive_12
+\begin{align*}
+  X_{12} &= \left(X - \frac{7}{12}\right), \quad Y_{12} = \left(Y + \frac{27}{64}\right) \\
+  \tau_{12}(X,Y) &= -\frac{11}{83}\cos^{2}\left(\frac{2095}{122}X_{12} + \frac{1046}{171}Y_{12} + \frac{129}{196}\cos\left(\frac{648}{145}X_{12} + \frac{295}{101}Y_{12}\right)\right)
+    &\quad + \frac{7}{194}\cos^{4}\left(\frac{616}{125}X_{12} + \frac{2964}{155}Y_{12} + \frac{59}{36}\cos\left(\frac{34}{23}X_{12} + \frac{273}{68}Y_{12}\right)\right) + \frac{14}{123}\cos^{6}\left(\frac{4976}{175}X_{12} + \frac{2226}{181}Y_{12} + \frac{77}{172}\cos\left(\frac{1109}{179}X_{12} + \frac{889}{200}Y_{12}\right)\right)
+    &\quad + \frac{8}{197}\cos^{8}\left(\frac{1103}{94}X_{12} + \frac{4629}{128}Y_{12} + \frac{7}{71}\cos\left(\frac{58}{19}X_{12} + \frac{1353}{175}Y_{12}\right)\right) + \frac{17}{181}\cos^{12}\left(\frac{8295}{176}X_{12} + \frac{1913}{97}Y_{12} - \frac{120}{103}\cos\left(\frac{54}{7}X_{12} + \frac{49}{10}Y_{12}\right)\right)
+    &\quad + \frac{1}{55}\cos^{16}\left(\frac{3229}{164}X_{12} + \frac{4265}{76}Y_{12} + \frac{88}{129}\cos\left(\frac{325}{96}X_{12} + \frac{1392}{169}Y_{12}\right)\right)
+  C_{12}(X,Y,v) &= \frac{24-3v}{40} \cdot \left(1 - \frac{137}{184}X_{12} + \frac{13}{34}Y_{12}\right) + \tau_{12}(X,Y)
+  \Phi_{12}(X,Y) &= 1 - \left(\frac{X_{12}}{\frac{73}{151}}\right)^{2} - \left(\frac{Y_{12}}{\frac{107}{177}}\right)^{2}
+    &\quad + \frac{4}{183}\cos\left(1\theta - \frac{17}{138}\right) - \frac{17}{90}\cos\left(2\theta + \frac{52}{161}\right) + \frac{1}{153}\cos\left(3\theta + \frac{166}{199}\right) - \frac{9}{130}\cos\left(4\theta + \frac{125}{104}\right)
+    &\quad - \frac{3}{76}\cos\left(5\theta + \frac{101}{43}\right) - \frac{1}{151}\cos\left(6\theta + \frac{431}{179}\right) + \frac{31}{84}\cos\left(7\theta + \frac{584}{181}\right) + \frac{39}{139}\cos\left(8\theta + \frac{466}{145}\right)
+  W_{12}(X,Y) &= \exp\left(-\exp\left(-\frac{4938}{113}\cdot\Phi_{12}(X,Y)\right)\right)
+\end{align*}
+
+% Layer 13: Primitive_13
+\begin{align*}
+  X_{13} &= \left(X - \frac{48}{199}\right), \quad Y_{13} = \left(Y + \frac{20}{39}\right) \\
+  \tau_{13}(X,Y) &= -\frac{23}{132}\cos^{2}\left(\frac{2691}{163}X_{13} + \frac{417}{88}Y_{13} - \frac{77}{152}\cos\left(4X_{13} + \frac{548}{177}Y_{13}\right)\right)
+    &\quad + \frac{7}{188}\cos^{4}\left(\frac{997}{161}X_{13} + \frac{3845}{199}Y_{13} + \frac{11}{40}\cos\left(\frac{191}{64}X_{13} + \frac{1126}{179}Y_{13}\right)\right) + \frac{7}{57}\cos^{6}\left(\frac{2365}{82}X_{13} + 10.004Y_{13} - \frac{58}{47}\cos\left(\frac{878}{169}X_{13} + \frac{996}{191}Y_{13}\right)\right)
+    &\quad + \frac{5}{132}\cos^{8}\left(\frac{215}{18}X_{13} + \frac{1601}{44}Y_{13} + \frac{39}{128}\cos\left(\frac{404}{123}X_{13} + \frac{179}{27}Y_{13}\right)\right) + \frac{1}{60}\cos^{12}\left(\frac{2342}{49}X_{13} + \frac{1451}{75}Y_{13} - \frac{17}{15}\cos\left(\frac{1349}{165}X_{13} + \frac{586}{143}Y_{13}\right)\right)
+  C_{13}(X,Y,v) &= \frac{35-2v}{40} \cdot \left(1 - \frac{91}{197}X_{13}\right) + \tau_{13}(X,Y)
+  \Phi_{13}(X,Y) &= 1 - \left(\frac{X_{13}}{\frac{81}{178}}\right)^{2} - \left(\frac{Y_{13}}{\frac{94}{199}}\right)^{2}
+    &\quad + \frac{9}{32}\cos\left(1\theta + \frac{8}{169}\right) - \frac{3}{16}\cos\left(2\theta + \frac{105}{199}\right) + \frac{1}{135}\cos\left(3\theta + \frac{28}{33}\right) + \frac{4}{163}\cos\left(4\theta + \frac{65}{46}\right)
+    &\quad - \frac{3}{71}\cos\left(5\theta + \frac{373}{178}\right) + \frac{27}{178}\cos\left(6\theta + \frac{224}{81}\right) + \frac{17}{200}\cos\left(7\theta + \frac{457}{148}\right) + \frac{4}{149}\cos\left(8\theta + \frac{697}{199}\right)
+  W_{13}(X,Y) &= \exp\left(-\exp\left(-\frac{6488}{147}\cdot\Phi_{13}(X,Y)\right)\right)
+\end{align*}
+
+% Layer 14: Primitive_14
+\begin{align*}
+  X_{14} &= \left(X - \frac{46}{81}\right), \quad Y_{14} = \left(Y + \frac{74}{187}\right) \\
+  \tau_{14}(X,Y) &= -\frac{11}{140}\cos^{2}\left(\frac{2690}{177}X_{14} + \frac{397}{97}Y_{14} - \frac{13}{187}\cos\left(\frac{596}{147}X_{14} + \frac{269}{161}Y_{14}\right)\right)
+    &\quad - \frac{6}{199}\cos^{4}\left(\frac{1134}{181}X_{14} + \frac{1026}{55}Y_{14} - \frac{105}{181}\cos\left(\frac{257}{131}X_{14} + \frac{83}{14}Y_{14}\right)\right) - \frac{2}{83}\cos^{6}\left(\frac{3823}{141}X_{14} + \frac{2221}{200}Y_{14} - \frac{108}{197}\cos\left(\frac{216}{37}X_{14} + \frac{647}{149}Y_{14}\right)\right)
+    &\quad - \frac{1}{43}\cos^{16}\left(\frac{3140}{153}X_{14} + \frac{10761}{194}Y_{14} + \frac{113}{200}\cos\left(\frac{73}{36}X_{14} + \frac{690}{73}Y_{14}\right)\right)
+  C_{14}(X,Y,v) &= \frac{25-3v}{40} \cdot \left(1 - \frac{24}{65}X_{14} - \frac{13}{150}Y_{14}\right) + \tau_{14}(X,Y)
+  \Phi_{14}(X,Y) &= 1 - \left(\frac{X_{14}}{\frac{100}{199}}\right)^{2} - \left(\frac{Y_{14}}{\frac{86}{177}}\right)^{2}
+    &\quad + \frac{11}{146}\cos\left(1\theta + \frac{45}{82}\right) - \frac{26}{63}\cos\left(2\theta + \frac{7}{54}\right) + \frac{2}{67}\cos\left(3\theta + \frac{218}{121}\right) + \frac{11}{146}\cos\left(4\theta + \frac{144}{73}\right)
+    &\quad + \frac{1}{114}\cos\left(5\theta + \frac{172}{161}\right) + \frac{1}{39}\cos\left(6\theta + \frac{295}{99}\right) + \frac{8}{121}\cos\left(7\theta + \frac{257}{94}\right) - \frac{4}{75}\cos\left(8\theta + \frac{496}{149}\right)
+  W_{14}(X,Y) &= \exp\left(-\exp\left(-\frac{1792}{41}\cdot\Phi_{14}(X,Y)\right)\right)
+\end{align*}
+
+% Layer 15: Primitive_15
+\begin{align*}
+  X_{15} &= \left(X + \frac{11}{197}\right), \quad Y_{15} = \left(Y - \frac{70}{199}\right) \\
+  \tau_{15}(X,Y) &= \frac{40}{139}\cos^{2}\left(\frac{374}{27}X_{15} + \frac{1158}{155}Y_{15} - \frac{125}{117}\cos\left(\frac{387}{64}X_{15} + \frac{127}{42}Y_{15}\right)\right)
+    &\quad - \frac{1}{84}\cos^{4}\left(\frac{1031}{199}X_{15} + \frac{2272}{109}Y_{15} - \frac{23}{125}\cos\left(\frac{61}{59}X_{15} + \frac{962}{165}Y_{15}\right)\right) + \frac{16}{153}\cos^{6}\left(\frac{1402}{53}X_{15} + \frac{1375}{118}Y_{15} + \frac{234}{185}\cos\left(\frac{109}{15}X_{15} + \frac{609}{190}Y_{15}\right)\right)
+    &\quad - \frac{1}{105}\cos^{8}\left(\frac{2337}{196}X_{15} + \frac{6454}{183}Y_{15} - \frac{69}{194}\cos\left(\frac{39}{11}X_{15} + \frac{1018}{157}Y_{15}\right)\right) - \frac{1}{37}\cos^{12}\left(\frac{4621}{95}X_{15} + \frac{3543}{191}Y_{15} - \frac{168}{181}\cos\left(\frac{920}{137}X_{15} + \frac{184}{61}Y_{15}\right)\right)
+    &\quad + \frac{2}{77}\cos^{16}\left(\frac{1741}{87}X_{15} + \frac{4141}{74}Y_{15} + \frac{5}{7}\cos\left(\frac{630}{199}X_{15} + \frac{917}{109}Y_{15}\right)\right)
+  C_{15}(X,Y,v) &= \frac{15-6v+v^2}{40} \cdot \left(1 + \frac{89}{128}X_{15} + \frac{112}{75}Y_{15}\right) + \tau_{15}(X,Y)
+  \Phi_{15}(X,Y) &= 1 - \left(\frac{X_{15}}{\frac{19}{80}}\right)^{2} - \left(\frac{Y_{15}}{\frac{104}{175}}\right)^{2}
+    &\quad - \frac{17}{57}\cos\left(1\theta + \frac{94}{159}\right) + \frac{33}{199}\cos\left(2\theta + \frac{87}{107}\right) - \frac{3}{89}\cos\left(3\theta - \frac{4}{101}\right) - \frac{4}{81}\cos\left(4\theta + \frac{248}{173}\right)
+    &\quad + \frac{17}{162}\cos\left(5\theta + \frac{181}{85}\right) - \frac{5}{96}\cos\left(6\theta + \frac{311}{111}\right) - \frac{18}{139}\cos\left(7\theta + \frac{349}{136}\right) + \frac{3}{26}\cos\left(8\theta + \frac{247}{89}\right)
+  W_{15}(X,Y) &= \exp\left(-\exp\left(-\frac{3783}{89}\cdot\Phi_{15}(X,Y)\right)\right)
+\end{align*}
+
+\subsection*{Master Composition (Recursive Layer Synthesis)}
+\begin{align*}
+  H_v^{(0)}(X,Y) &= C_0(X,Y,v) \\[4pt]
+  H_v^{1}(X,Y) &= \left(1 - W_{1}(X,Y)\right)\cdot H_v^{0}(X,Y) + W_{1}(X,Y)\cdot C_{1}(X,Y,v) \\[3pt]
+  H_v^{2}(X,Y) &= \left(1 - W_{2}(X,Y)\right)\cdot H_v^{1}(X,Y) + W_{2}(X,Y)\cdot C_{2}(X,Y,v) \\[3pt]
+  H_v^{3}(X,Y) &= \left(1 - W_{3}(X,Y)\right)\cdot H_v^{2}(X,Y) + W_{3}(X,Y)\cdot C_{3}(X,Y,v) \\[3pt]
+  H_v^{4}(X,Y) &= \left(1 - W_{4}(X,Y)\right)\cdot H_v^{3}(X,Y) + W_{4}(X,Y)\cdot C_{4}(X,Y,v) \\[3pt]
+  H_v^{5}(X,Y) &= \left(1 - W_{5}(X,Y)\right)\cdot H_v^{4}(X,Y) + W_{5}(X,Y)\cdot C_{5}(X,Y,v) \\[3pt]
+  H_v^{6}(X,Y) &= \left(1 - W_{6}(X,Y)\right)\cdot H_v^{5}(X,Y) + W_{6}(X,Y)\cdot C_{6}(X,Y,v) \\[3pt]
+  H_v^{7}(X,Y) &= \left(1 - W_{7}(X,Y)\right)\cdot H_v^{6}(X,Y) + W_{7}(X,Y)\cdot C_{7}(X,Y,v) \\[3pt]
+  H_v^{8}(X,Y) &= \left(1 - W_{8}(X,Y)\right)\cdot H_v^{7}(X,Y) + W_{8}(X,Y)\cdot C_{8}(X,Y,v) \\[3pt]
+  H_v^{9}(X,Y) &= \left(1 - W_{9}(X,Y)\right)\cdot H_v^{8}(X,Y) + W_{9}(X,Y)\cdot C_{9}(X,Y,v) \\[3pt]
+  H_v^{10}(X,Y) &= \left(1 - W_{10}(X,Y)\right)\cdot H_v^{9}(X,Y) + W_{10}(X,Y)\cdot C_{10}(X,Y,v) \\[3pt]
+  H_v^{11}(X,Y) &= \left(1 - W_{11}(X,Y)\right)\cdot H_v^{10}(X,Y) + W_{11}(X,Y)\cdot C_{11}(X,Y,v) \\[3pt]
+  H_v^{12}(X,Y) &= \left(1 - W_{12}(X,Y)\right)\cdot H_v^{11}(X,Y) + W_{12}(X,Y)\cdot C_{12}(X,Y,v) \\[3pt]
+  H_v^{13}(X,Y) &= \left(1 - W_{13}(X,Y)\right)\cdot H_v^{12}(X,Y) + W_{13}(X,Y)\cdot C_{13}(X,Y,v) \\[3pt]
+  H_v^{14}(X,Y) &= \left(1 - W_{14}(X,Y)\right)\cdot H_v^{13}(X,Y) + W_{14}(X,Y)\cdot C_{14}(X,Y,v) \\[3pt]
+  H_v^{15}(X,Y) &= \left(1 - W_{15}(X,Y)\right)\cdot H_v^{14}(X,Y) + W_{15}(X,Y)\cdot C_{15}(X,Y,v) \\[3pt]
+  H_v(X,Y) &= H_v^{15}(X,Y)
+\end{align*}
+
+\subsection*{Final RGB Channel Evaluation}
+\[
+  \text{Color}(x,y) = \left( F\left(H_0(X,Y)\right), \; F\left(H_1(X,Y)\right), \; F\left(H_2(X,Y)\right) \right)
+\]
+where $F(x) = \left[255\,e^{-e^{-1000x}}|x|\,e^{-e^{1000(x-1)}}\right]$ performs exact differentiable color clamping to $[0, 255]$.
+
+\end{document}
